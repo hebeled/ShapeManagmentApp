@@ -1,9 +1,10 @@
 import java.util.Scanner;
 
 public class ShapeManagement {
-    private ShapeList shapeList = new ShapeList();
-    private Scanner scanner = new Scanner(System.in);
+    private final ShapeList shapeList = new ShapeList();
+    private final Scanner scanner = new Scanner(System.in);
 
+    // Asks the user whether to continue using the program
     private boolean wannaContinue() {
         while (true) {
             System.out.print("\nDo you want to continue the program? (Y/N) >> ");
@@ -21,6 +22,7 @@ public class ShapeManagement {
         }
     }
 
+    // Displays the main menu and handles user choices
     public void optionMenu() {
         String menu = "\n____ Menu _____";
         menu += "\n1. Add a shape";
@@ -63,6 +65,7 @@ public class ShapeManagement {
         }
     }
 
+    // Adds a new shape to the shape list
     private void addShape() {
         System.out.print("Please choose shape:\nC for Circle\nR for Rectangle\nS for Square\nT for Triangle\n>> ");
         char shapeChoice = scanner.next().toUpperCase().charAt(0);
@@ -138,6 +141,7 @@ public class ShapeManagement {
         }
     }
 
+    // Removes a shape from the list using its ID
     private void removeShape() {
         System.out.print("Please provide the ID of the shape: ");
         int id = scanner.nextInt();
@@ -150,6 +154,7 @@ public class ShapeManagement {
         }
     }
 
+    // Displays information about one shape using its ID
     private void getShapeInfo() {
         System.out.print("Please provide the ID of the shape: ");
         int id = scanner.nextInt();
@@ -161,6 +166,7 @@ public class ShapeManagement {
         }
     }
 
+    // Calculates and displays the area and perimeter of a shape
     private void calculateAreaPerimeter() {
         System.out.print("Please provide the ID of the shape: ");
         int id = scanner.nextInt();
@@ -173,10 +179,12 @@ public class ShapeManagement {
         }
     }
 
+    // Displays all shapes in the list
     private void displayAllShapes() {
         System.out.println(shapeList.display());
     }
 
+    // Translates all shapes by the given x and y values
     private void translateShapes() {
         System.out.print("Translate x value: ");
         int dx = scanner.nextInt();
@@ -187,6 +195,7 @@ public class ShapeManagement {
         System.out.println("All shapes translated successfully!");
     }
 
+    // Scales all shapes using the given factor and sign
     private void scaleShapes() {
         int factor;
 
